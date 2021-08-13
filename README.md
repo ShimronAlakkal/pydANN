@@ -23,13 +23,55 @@ model.add_hl( [ 2,5,5 ] , activation_functions = ['relu', 'relu' ,'relu' ,'sigmo
 
 ```
 
+#### To train the model, use the `fit( xtrain, ytrain, epoch = 50, learning_rate = 0.01, verbose = 0,decay = True, decay_iter = 5, decay_rate = 0.9, stop_decay_counter = 100, loss_function = 'mse'  )` method
 
-algorithms under development for pydann:
+```python
+# you can also register the training data before you train the model.
 
-    Artificial Neural Nets  
-    Multi Layer Perceptrons
-    K-means clustering
-    K-nearest neighbours
+model.fit( train_x , y_train )  # this is the basic implementation of the method without any alteration
+```
+
+*epoch :  The number of iterations to train the model*
+*learning_rate : The value with which the algorithm optimizes weights and biases*
+*verbose : When put 0, verbose is False ( There won't be data printing ) if set to another value other than 0, then the data is printed after each verbose interval*
+*decay : This value optimizes the learning_rate when set to True*
+*loss_function : The function using which the loss is calculated. Loss function option : 'mse' , 'rmse'*
+
+
+#### To plot the change in the cost(s) after each epoch, use `plot_cost_to_epoch()`
+```python
+model.plot_cost_to_epoch()
+```
+
+#### To plot the change in learning_rate after each epoch, use `plot_lrc_to_epoch()`
+```python
+model.plot_lrc_to_epoch()
+```
     
+#### To predict on test data, use the function `predict( xtest )`
+```python
+y_predictions = model.predict( xtest )
+```
+
+#### To evaluate the model base on Mean Squared Error, use `mse_model_eval( ytest,ypreds )`
+```python
+model.mse_model_eval( ytest,ypreds )
+```
+
+#### To save the current trained model use `save_model( file = 'pydann_model.dat' )`
+```python
+
+# 'file' is the name of the file in which the model would be saved and it has to be a .dat file
+model.save_model()     # to save the model as pydann_model.dat just call the function like this
+
+# to customize the name of the file in which the model should be saved , change 'file'
+model.save_model( file = 'model.dat' )
+```
+
+#### To use the saved model use `use_model( path )`
+```python
+# path is the file path ( directory ) to the saved model
+model.use_model( )
+```
 
 [connect with me](https://www.instagram.com/shimron.alakkal)  
