@@ -5,13 +5,13 @@
 
 ## Docs 
 
-#### Inorder to make a model using pydANN, intanciate the class `ann()`
+#### Inorder to make an Artificial Neural Network model using pydANN, intanciate the class `ann()`
 ```python
 
 model = ann()
 
 ```
-#### Inorder to add hidden layers to the model, use the `add_hl( hidden_Layers_list , activations_for_each_layer + 1  )`
+#### Inorder to add hidden layers to the model use the method `add_hl( hidden_Layers_list , activations_for_each_layer + 1  )`
 
 ```python
 # we are now going to add hidden layers to the model 
@@ -19,7 +19,7 @@ model = ann()
 model.add_hl( [ 2,5,5 ] , activation_functions = ['relu', 'relu' ,'relu' ,'sigmoid'] )
 
 # the above line adds to the model three hidden layers each of 2, 5 and 5 nodes, respectively. 
-# The activation_functions should be 1 more in length so as to have one for each hl and for the output layer
+# The activation_functions should be 1 more in length so as to have one for each hl and an activation for the output layer
 
 ```
 
@@ -31,11 +31,18 @@ model.add_hl( [ 2,5,5 ] , activation_functions = ['relu', 'relu' ,'relu' ,'sigmo
 model.fit( train_x , y_train )  # this is the basic implementation of the method without any alteration
 ```
 
-*epoch :  The number of iterations to train the model*
-*learning_rate : The value with which the algorithm optimizes weights and biases*
-*verbose : When put 0, verbose is False ( There won't be data printing ) if set to another value other than 0, then the data is printed after each verbose interval*
-*decay : This value optimizes the learning_rate when set to True*
-*loss_function : The function using which the loss is calculated. Loss function option : 'mse' , 'rmse'*
+**epoch :  The number of iterations to train the model**
+
+**learning_rate : The value with which the algorithm optimizes weights and biases**
+
+**verbose : When put 0, verbose is False ( There won't be data printing ) if set to another value other than 0, then the data is printed after each verbose interval**
+
+**decay : This value optimizes the learning_rate when set to True**
+
+**loss_function : The function using which the loss is calculated. Loss function option : 'mse' , 'rmse'**
+
+**decay_rate : The fractional value with which the learning rate is altered**
+
 
 
 #### To plot the change in the cost(s) after each epoch, use `plot_cost_to_epoch()`
@@ -58,7 +65,7 @@ y_predictions = model.predict( xtest )
 model.mse_model_eval( ytest,ypreds )
 ```
 
-#### To save the current trained model use `save_model( file = 'pydann_model.dat' )`
+#### To save the current trained model use method `save_model( file = 'pydann_model.dat' )`
 ```python
 
 # 'file' is the name of the file in which the model would be saved and it has to be a .dat file
@@ -68,10 +75,16 @@ model.save_model()     # to save the model as pydann_model.dat just call the fun
 model.save_model( file = 'model.dat' )
 ```
 
-#### To use the saved model use `use_model( path )`
+#### To use the saved model use method `use_model( path )`
 ```python
 # path is the file path ( directory ) to the saved model
 model.use_model( )
 ```
 
+#### To dispose the model and clear memory use the `dispose_model()` method
+```python
+model.dispose_model()
+```
+
+#
 [connect with me](https://www.instagram.com/shimron.alakkal)  
