@@ -86,5 +86,10 @@ model.use_model( )
 model.dispose_model()
 ```
 
+#### To get the documentations locally on your device about the class use 
+```python
+model.help()
+```                             
+
 #
 [connect with me](https://www.instagram.com/shimron.alakkal)  
