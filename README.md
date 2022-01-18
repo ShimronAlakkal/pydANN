@@ -5,7 +5,7 @@
 
 ## Docs 
 
-#### Inorder to make an Artificial Neural Network model using pydANN,import the package and, intanciate the class `ann()`
+#### Inorder to make an Artificial Neural Network model using pydANN import the package and instantiate the class `ann()`
 ```python
 from pydann import ann
 model = ann()
